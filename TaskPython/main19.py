@@ -4,12 +4,13 @@
 # Input: [1, 2, 3, 4, 5] k = 3
 # Output: [4, 5, 1, 2, 3]
 
-n = int(input('-->'))
-k = int(input('-->'))
+n = int(input('N-->'))
+k = int(input('k-->'))
 list = [i for i in range(1, n + 1)]
-while k > 0:
-    list.append(list.pop(0))
-    k -= 1
+step = k % n
+while step > 0:
+    list.insert(0, list.pop(-1))
+    step -= 1
 
 print(list)
 
